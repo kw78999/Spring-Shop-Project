@@ -25,4 +25,4 @@ __현재 개발중인__ Spring 기반의 쇼핑몰 입니다.
 
 
 
-바로가기<http://crimeshop.shop/>
+__바로가기__   <http://crimeshop.shop/>
