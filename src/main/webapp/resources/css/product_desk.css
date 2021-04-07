@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+
+.category_menu{
+width: 800px;
+height: 40px;
+margin-left: 20%;
+margin-top: 300px;
+font-size: 1.5rem;
+}
+.details_main{
+width:1200px;
+height:1200px;
+margin: 0 auto;
+border: 2px solid gray;
+margin-bottom: 150px;
+box-shadow: 5px 5px 5px 5px gray;
+}
+.img_li{
+width:100%;
+max-width:670px;
+max-height:1050px;
+border: 0;
+float: left;
+}
+.img{
+width:100%;
+max-width:670px;
+max-height: 1050px;
+}
+.product_li{
+width: 30%;
+height: 500px;
+font-size: 2rem;
+float: right;
+padding-right: 100px;
+}
+.product_li_div{
+text-align: left;
+height: 600px;	
+}
+.details_ul{
+list-style-type: none;
+width: 100%;
+height: 100%;
+}
+.product_hr{
+width: 100%;
+padding-top: -30px;
+}
+.product_text{
+	border: 1px solid red;
+	width: 400px;
+	height: 200px;
+	font-size: 1.5rem;
+	margin-top: 50px;
+}
+.review_table{
+	width: 70%;
+	height: 100%;
+	margin: auto;
+	font-size: 1.3rem;
+}
+.review_table td{
+	border: 1px solid red;
+	text-align: center;
+}
+.mainContent{
+	width: 100%;
+	height: 100%;
+	border: 3px solid blue;
+	margin: auto;
+	
+}
+.size{
+	width: 70%;
+	height: 500px;
+	border: 3px solid red;
+	margin: auto;
+}
+.QA{
+	width: 70%;
+	height: 500px;
+	border: 3px solid red;
+	margin: auto;
+}
+.size_table{
+	width: 90%;
+	height: 170px;
+	margin: auto;
+	font-size: 1.3rem;
+}
+.size_table td{
+	border: 1px solid green;
+	text-align: center;
+}
+.size_table_first_tr{
+	background: aliceblue;
+}
+.optionSelecter{
+	height: 40px;
+	width: 350px;
+	font-size: 1.5rem;
+}
+	
+.product_btn{
+	margin-top:20px;
+	width: 350px;
+	height: 60px;
+	outline:0;
+	color:#D873F1;
+	font-weight:700;
+	font-size:1.3rem;
+	border: 5px solid #D873F1;
+	background-color:white;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+.product_btn:hover{
+	cursor: pointer;
+}
+.sum{
+	width: 120px;
+	height: 25px;
+	font-size: 1.5rem;
+}
+.amount{
+	width: 90px;
+	height: 25px;
+	font-size: 1.5rem;
+}
+.plusProduct{
+	width: 50px;
+	height: 35px;
+	border-radius: 5px;
+	outline:0;
+	border: 5px solid #ccc;
+	font-size: 1rem;
+	font-weight:900;
+}
+.plusProduct:hover{
+	cursor: pointer;
+	border: 5px solid #D873F1;
+}
+
+.minusProduct{
+	width: 50px;
+	height: 35px;
+	border-radius: 5px;
+	outline:0;
+	border: 5px solid #ccc;
+	font-size: 1rem;
+	font-weight:900;
+}
+.minusProduct:hover{
+	cursor: pointer;
+	border: 5px solid brown;
+}
+.cartDiv{
+	width: 400px;
+	height: 60px;
+	border-top:1px solid silver;
+	border-bottom:1px solid silver;
+	font-size: 1rem;
+	padding-top: 15px;
+}
+
+.delBtn{
+	float: right;
+	width: 30px;
+	height: 30px;
+	background-color: brown;
+	border-radius: 5px;
+	color:white;
+	font-weight: bold;
+	outline:0;
+	border: 0;
+}
+.delBtn:hover{
+	cursor: pointer;
+}
+.sumPrice{
+	width: 400px;
+	height: 50px;
+	border: 1px solid green;
+	
+}

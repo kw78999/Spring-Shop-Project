@@ -1,0 +1,49 @@
+CREATE TABLE `member` (
+	`id` VARCHAR(15) NOT NULL COLLATE 'euckr_korean_ci',
+	`pwd` VARCHAR(15) NOT NULL COLLATE 'euckr_korean_ci',
+	`name` VARCHAR(5) NOT NULL COLLATE 'euckr_korean_ci',
+	`birth` DATE NOT NULL,
+	`zipCode` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`email` VARCHAR(30) NOT NULL COLLATE 'euckr_korean_ci',
+	`phone` VARCHAR(15) NOT NULL COLLATE 'euckr_korean_ci',
+	`emailCheck` INT(11) NULL DEFAULT '0',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='euckr_korean_ci'
+ENGINE=InnoDB
+;
+
+CREATE TABLE `product` (
+	`pNum` INT(11) NOT NULL AUTO_INCREMENT,
+	`pName` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`thumbnail` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`size` VARCHAR(50) NOT NULL DEFAULT '0' COLLATE 'euckr_korean_ci',
+	`color` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`price` INT(11) NOT NULL DEFAULT '0',
+	`stock` INT(11) NOT NULL DEFAULT '0',
+	`category` VARCHAR(10) NOT NULL COLLATE 'euckr_korean_ci',
+	`categorySub` VARCHAR(10) NOT NULL COLLATE 'euckr_korean_ci',
+	`texture` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`content` VARCHAR(1024) NOT NULL COLLATE 'euckr_korean_ci',
+	`character` VARCHAR(50) NULL COLLATE 'euckr_korean_ci',
+	PRIMARY KEY (`pNum`) USING BTREE
+)
+COLLATE='euckr_korean_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=4
+;
+
+
+CREATE TABLE `product_option` (
+	`pNum` INT(20) NOT NULL,
+	`option_size` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`option_color` VARCHAR(50) NOT NULL COLLATE 'euckr_korean_ci',
+	`option_stock` INT(11) NOT NULL DEFAULT '0',
+	`option_price` INT(11) NOT NULL,
+	PRIMARY KEY (`option_size`, `option_color`) USING BTREE,
+	INDEX `pNum` (`pNum`) USING BTREE,
+	CONSTRAINT `pNum` FOREIGN KEY (`pNum`) REFERENCES `shopingmall`.`product` (`pNum`) ON UPDATE RESTRICT ON DELETE RESTRICT
+)
+COLLATE='euckr_korean_ci'
+ENGINE=InnoDB
+;
