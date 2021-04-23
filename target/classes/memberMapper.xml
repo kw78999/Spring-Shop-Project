@@ -27,4 +27,10 @@
 	<update id="emailCheck" >
 	update member set emailCheck = 1 where id = #{id}
 	</update>
+	
+	<!-- 멤버리스트 -->
+	<select id="mlist" resultType="com.cos.domain.MemberVO">
+	select * from member 
+	</select>
+	
 </mapper>

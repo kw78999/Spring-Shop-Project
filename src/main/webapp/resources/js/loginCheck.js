@@ -350,7 +350,41 @@ $(document).ready(function(){
 			idc.innerHTML="영문과 숫자 8~12자로 해주세요.";
 		}
 	}); 
+	
+	//json test
+	$('input[name=pwd]').blur(function(){
+		
+			var xhr = $.ajax({
+				url:'mlist',
+				type:'get',
+				dataType:'json', 
+				beforeSend:function(request){
+					request.setRequestHeader("testHeader","test2");
+				},
+				success:function(data){
+					console.log(xhr.getAllResponseHeaders());
+					/*console.log(JSON.stringify(data));
+					for(var i=0;i<10;i++){
+					    console.log("id :"+data[i].id+" ,pwd:"+data[i].pwd);
+					}*/
+				}
+			})
+			
+			.done(function(){
+				console.log('ajax 성공');
+			})
+			.fail(function(xhr, status, errorThrown) {
+				console.log("오류명: " + errorThrown);
+			    console.log("상태: " + status);
+			})
+			.always(function(){
+				console.log('ajax 완료됨');
+			})
+		});
+	
 })
+
+
 
 function execPostcode() {
 	new daum.Postcode({

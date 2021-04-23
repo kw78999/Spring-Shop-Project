@@ -27,7 +27,7 @@ import com.cos.service.ProductService;
 public class ProductController{
 	
 	private static final String FILE_SERVER_PATH =
-			"C:\\Spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\ShopingMall\\resources\\editor\\upload";
+			"C:\\Users\\mschoi.DI-SOLUTION\\Desktop\\WorkSpace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\ShopingMall\\resources\\editor\\upload";
 					
 	
 	@Inject
@@ -62,13 +62,13 @@ public class ProductController{
 	public String productUpload(@RequestParam("uploadFile") List<MultipartFile> file,
 			ProductVO product,ProductOptionVO productOption,
 			ProductTextureVO productTexture,ModelAndView mv,Model model) throws Exception {
-		
+		 
 		
 		for (int i = 0; i < file.size(); i++) {
 			if(!file.get(i).getOriginalFilename().isEmpty()) {
 				file.get(i).transferTo(new File(FILE_SERVER_PATH, file.get(i).getOriginalFilename()));
 				model.addAttribute("msg", "File uploaded successfully.");
-			}else {
+			}else { 
 				model.addAttribute("msg", "Please select a valid mediaFile..");
 			}
 		}

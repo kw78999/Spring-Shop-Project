@@ -2,11 +2,15 @@ package com.cos.service;
 
 
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cos.domain.MemberVO;
 import com.cos.persistence.MemberDAO;
+
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -32,6 +36,11 @@ public class MemberServiceImpl implements MemberService {
 		public void emailCheck(String id) throws Exception {
 			dao.emailCheck(id);
 		
+		}
+		@Override
+		public List<MemberVO> mlist() throws Exception {
+			
+		return dao.mlist();
 		}
 		
 }

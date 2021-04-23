@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta charset="UTF-8">
 
 <style>
@@ -57,7 +58,8 @@ float: left;
 margin-left:0px;
 display:inline-block;
  text-align:center;
- width:150px;
+ width:160px;
+ font-weight: bold;
 }
 .category_ul li:hover{
 cursor: pointer;
@@ -70,16 +72,28 @@ width:700px;
 text-decoration: none;
 font-weight:700;
 color: #5F9EA0;
-width: 100px;
 }
 .indexText:hover{
 color:white;
 background-color: #5F9EA0;
 }
+.testdiv{
+height: 350px;
+width: 60%;
+margin:auto;
+margin-top:200px;
+margin-bottom:50px;
+border:5px solid blue;
+display: none;
+overflow: hidden;
+}
 </style>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script>
+function animateTest(){
+	$(".category").delay(2000).animate({height: "100"}, 500);
+}
 function out(obj) {
 	if(obj.innerHTML=='신제품'){
 		obj.innerHTML="New";
@@ -97,6 +111,22 @@ function out(obj) {
 		obj.innerHTML="One Piace";
 	}
 }
+
+$(function(){
+	$(".category_ul").on({
+		mouseover:function(){
+			$(".category").finish();
+			$(".testdiv").slideDown(500);
+		},
+		mouseout: function(){
+			$(".testdiv").finish();
+			$(".testdiv").delay(3000).slideUp(500);
+		}
+	});
+});
+
+
+
 function hover(obj) {
 	if(obj.innerHTML=='New'){
 		obj.innerHTML="신제품";
@@ -115,6 +145,14 @@ function hover(obj) {
 	}
 }	
 
+/* li 인덱스값 가져오기
+$(function(){
+	$(".category_li").click(function(){
+		var liIndex = $(".category_li").index(this);
+		alert(liIndex);
+	});
+});
+*/
 </script>
 </head>
 <body>
@@ -122,7 +160,7 @@ function hover(obj) {
 	<ul class="nav_ul">
 	
 		<c:if test="${sessionScope.id!=null}">
-			<li><a href="logout" class="indexText">로그아웃 </a></li>
+			<li><a href="logout" class="indexText">${sessionScope.id} 로그아웃 </a></li>
 		</c:if>
 		<c:if test="${sessionScope.id==null}">
 			<c:if test="${sessionScope.id!='admin' }">
@@ -148,6 +186,8 @@ function hover(obj) {
 	</a>
 </div>
 
+
+
 <div class="category">
 		<ul class="category_ul">
 			<li  onmouseout="out(this)" onmouseover="hover(this)"class="category_li">New</li>
@@ -160,6 +200,8 @@ function hover(obj) {
 </div>
 
 
-
 </body>
+<div class="testdiv">
+상세 카테고리 list
+</div>
 </html>

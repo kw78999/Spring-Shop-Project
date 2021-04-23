@@ -82,7 +82,8 @@ margin-bottom: 50%;
 color:brown;
 cursor: pointer;
 }
-
+.snsLogin{
+float: left;}
 </Style>
 <script>
 var mql = window.matchMedia("screen and (max-width: 1024px)");
@@ -114,20 +115,14 @@ mql.addListener(function(e) {
 			<div class="login_form_submit">
 				<input type="button" value="JOIN" class="login_btn" onclick="location.href='join'">
 				<input type="submit" value="LOGIN" class="login_btn"><br>
-				<a  onclick="alert('구현되지 않았습니다.')" class="none">Forgot Password?</a>
-			</div>
-			
-			<!-- <ul class="login_form_ul">
-				<li><div class="login_form_div"></div></li>
-				<li><div class="login_form_div"></div></li>
-				<li><div class="login_form_div"></div></li>
-				<li><div class="login_form_div"></div></li>
-			</ul> -->
-		
-		
-		
-		
-		
+				<!-- 네이버 로그인 창으로 이동 -->
+				<div id="naver_id_login" class="snsLogin"><a href="${url}">
+				네이버</a></div>
+				<a class="snsLogin"href=" https://kauth.kakao.com/oauth/authorize?client_id=d8a2ad3890c6df24dde85de4b83f58d4&redirect_uri=http://localhost:8080/controller/kakaoTest&response_type=code">
+				<img width="50" src="resources/img/ka.jpg" style="border-radius: 10px;"></a>
+				<br><a  onclick="alert('구현되지 않았습니다.')" class="none">Forgot Password?</a>
+				</div>
+					
 		</form>
 </div>
 </div>

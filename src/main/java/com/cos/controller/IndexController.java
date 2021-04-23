@@ -3,6 +3,7 @@ package com.cos.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +21,12 @@ public class IndexController {
 	
 	
 	@RequestMapping(value="index",method = {RequestMethod.GET, RequestMethod.POST})
-	public String index(Model model) throws Exception {
+	public String index(Model model,HttpSession session) throws Exception {
 		
 		List<ProductVO> list = pService.productSelect();
 		
 		model.addAttribute("list", list);
-		
+		model.addAttribute("session",session);
 		
 		return "index2";
 	}
